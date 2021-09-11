@@ -1,0 +1,15 @@
+name: Push commit
+on: push
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Create report file
+        run: date +%s > report.txt
+      - name: Commit report
+        run: |
+          git config --global user.name 'Github Action'
+          git config --global user.email 'github-action@@users.noreply.github.com'
+          git commit -am "Automated report"
+          git push
