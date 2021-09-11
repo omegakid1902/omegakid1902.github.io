@@ -65,18 +65,18 @@ jobs:
           git diff-index --quiet HEAD \
             || git commit -m "chore: update dependency and publish newsletters"
 
-#      - name: Push changes
-#        uses: ad-m/github-push-action@main
-#        with:
-#          github_token: ${{ secrets.GITHUB_TOKEN }}
-#          branch: main
-
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
-        
+
+      - name: Output Run ID
+        run: |
+          echo ${{ github.run_number }}
+          git tag gh-pages-build.${{ github.run_number }}
+          git push origin gh-pages-build.${{ github.run_number }}
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3.7.3
         with:
