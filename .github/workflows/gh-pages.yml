@@ -5,7 +5,7 @@ on:
   push:
     branches:
       #- master
-      - blue-book
+      - lyz-code/blue-book
   schedule:
     - cron: 11 06 * * *
 
@@ -57,10 +57,10 @@ jobs:
             || git commit -m "chore: update dependency and publish newsletters"
 
       - name: Push changes
-        uses: ad-m/github-push-action@master
+        uses: ad-m/github-push-action@lyz-code/blue-book
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: master
+          branch: lyz-code/blue-book
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
