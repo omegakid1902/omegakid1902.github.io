@@ -86,7 +86,8 @@ jobs:
           git diff-index --quiet HEAD \
             || git commit -m "gh-pages build number #${{ github.run_number }}"
           git tag gh-page-build.#${{ github.run_number }}
-          git push
+          git push origin gh-page-build.#${{ github.run_number }}
+          git push origin main
           
 #      - name: Push changes
 #        uses: ad-m/github-push-action@master
