@@ -9,3 +9,4 @@ mkdocs-roamlinks-plugin
 pymdown-extensions
 git+git://github.com/lyz-code/mkdocs-autolinks-plugin.git
 mkdocs-newsletter
+python-frontmatter
