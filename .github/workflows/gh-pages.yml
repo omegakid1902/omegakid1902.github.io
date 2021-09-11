@@ -48,6 +48,7 @@ jobs:
         run: |
           git clone https://github.com/omegakid1902/zettelkasten.git
           ls
+          git status
 
       - name: Scan md file to publish
         run: python publish.py
@@ -57,7 +58,9 @@ jobs:
 
       - name: Commit files
         run: |
+          git status
           rm -rf zettelkasten
+          git status
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add requirements.txt # git add docs/newsletter
