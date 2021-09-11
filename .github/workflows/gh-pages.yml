@@ -54,15 +54,16 @@ jobs:
           cd zettelkasten
           git checkout origin/main
           ls
-          git log
+          git log 1
           cd ..
+
+      - uses: actions/checkout@v2
+#      - name: Create report file
+#        run: date +%s > report.txt
 
       - name: Scan md file to publish
         run: python publish.py
 
-#      - uses: actions/checkout@v2
-#      - name: Create report file
-#        run: date +%s > report.txt
       - name: Commit report
         run: |
           cd zettelkasten
