@@ -54,7 +54,6 @@ jobs:
           cd zettelkasten
           git checkout origin/main
           ls
-          git log 1
           cd ..
 
       - uses: actions/checkout@v2
