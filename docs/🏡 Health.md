@@ -41,3 +41,8 @@ publish: True
 
 
 ## Tham khảo:
+```dataview
+list
+from [[🏡 Health]]
+sort file.name asc
+```
