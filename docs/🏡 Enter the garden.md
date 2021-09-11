@@ -13,7 +13,9 @@ publish: True
 
 ## Tools:
 [[📌 Workbench]]
+
 [[⏩ Quick note]]
+
 [[📑 Bookmark]]
 
 ## Entertainment
@@ -21,6 +23,9 @@ publish: True
 
 ## Research
 [[❕ Topics to research]]
+
 [[Lịch Sử Việt Nam]]
+
 [[🏡 Lịch sử Trung Quốc]]
+
 [[🏡 Health]]
