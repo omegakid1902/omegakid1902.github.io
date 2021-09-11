@@ -6,7 +6,7 @@ import os
 if not os.path.exists('./docs'):
     os.mkdir('./docs')
 
-def files_publish(file):
+def files_publish(root, file):
     if file.endswith(".md"):
         with open(os.path.join(root, file), encoding="utf8") as f:
             content = f.read()
@@ -19,8 +19,8 @@ def files_publish(file):
                 pass
 
 for file in os.listdir("./zettelkasten/"):
-    files_publish(file)
+    files_publish("./zettelkasten/", file)
 
 for root, dirs, files in os.walk("./zettelkasten/Zet/"):
-    files_publish(file)
+    files_publish("./zettelkasten/Zet/", file)
 
