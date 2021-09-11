@@ -78,6 +78,8 @@ jobs:
       - uses: actions-ecosystem/action-push-tag@v1
         with:
           tag: gh-pages-build.${{ github.run_number }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3.7.3
