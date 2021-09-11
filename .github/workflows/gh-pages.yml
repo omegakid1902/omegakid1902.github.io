@@ -84,11 +84,11 @@ jobs:
       - name: check tag
         run: echo ${{ steps.checkTag.outputs.exists }}
 
-      - name: Create tag
-        if: ${{ steps.checkTag.outputs.exists == 'false' }}
-        run: |
-          git tag gh-page-build.#${{ github.run_number }}
-          git push origin gh-page-build.#${{ github.run_number }}
+#      - name: Create tag
+#        if: ${{ steps.checkTag.outputs.exists == 'false' }}
+#        run: |
+#          git tag gh-page-build.#${{ github.run_number }}
+#          git push origin gh-page-build.#${{ github.run_number }}
 
       - name: Make the site
         run: make build-docs
