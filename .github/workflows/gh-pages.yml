@@ -46,12 +46,9 @@ jobs:
 
       - name: Commit files
         run: |
-          pwd
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
           git submodule init
+          git submodule update --init --recursive
           cd zettelkasten
-          git submodule update
 
       - name: Scan md file to publish
         run: python publish.py
