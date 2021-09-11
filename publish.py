@@ -12,7 +12,7 @@ for root, dirs, files in os.walk("./zettelkasten/Zet/"):
                 content = f.read()
                 metadata, content = frontmatter.parse(content)
                 if 'publish' in metadata.keys():
-                    print(metadata['title'])
+                    print(os.path.join(root, file))
                     copy(os.path.join(root, file), './docs/')
                 else:
                     pass
