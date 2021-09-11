@@ -40,13 +40,13 @@ jobs:
 
       - name: Install dependencies
         run: pip install pip-tools
-
-      - name: Scan md file to publish
-        run: python publish.py
         
       - name: Update requirements
         run: make update
 
+      - name: Scan md file to publish
+        run: python publish.py
+        
       - name: Make the site
         run: make build-docs
 
