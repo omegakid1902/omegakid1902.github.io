@@ -28,7 +28,9 @@ jobs:
           git branch
           echo Day la branch nhe!!!!!!!!
           git clone https://github.com/omegakid1902/zettelkasten.git
+          ls
           cd zettelkasten
+          ls
           git branch
           echo Day la branch zettelkasten nhe!!!!!!!!
           #git submodule update
