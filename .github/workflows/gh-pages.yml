@@ -23,6 +23,7 @@ jobs:
       - name: Commit files
         run: |
           git submodule init
+          git submodule update
 
       - name: Setup Python
         # https://github.com/actions/virtual-environments/issues/1202
