@@ -82,7 +82,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create tag
-        if: ${{ steps.checkTag.outputs.exists }}
+        if: ${{ steps.checkTag.outputs.exists == false }}
         run: |
           git tag gh-page-build.#${{ github.run_number }}
           git push origin gh-page-build.#${{ github.run_number }}
