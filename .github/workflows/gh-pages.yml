@@ -20,11 +20,6 @@ jobs:
           # Default: 1
           fetch-depth: 0
 
-      - name: Commit files
-        run: |
-          git submodule init
-          git submodule update
-
       - name: Setup Python
         # https://github.com/actions/virtual-environments/issues/1202
         # uses: actions/setup-python@v1
@@ -48,6 +43,11 @@ jobs:
         
       - name: Update requirements
         run: make update
+
+      - name: Clone zettelkasten
+        run: |
+          git clone https://github.com/omegakid1902/zettelkasten.git
+          ls
 
       - name: Scan md file to publish
         run: python publish.py
