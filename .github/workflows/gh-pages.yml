@@ -41,6 +41,9 @@ jobs:
       - name: Install dependencies
         run: pip install pip-tools
 
+      - name: Scan md file to publish
+        run: python publish.py
+        
       - name: Update requirements
         run: make update
 
