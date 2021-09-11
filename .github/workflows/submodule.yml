@@ -21,10 +21,11 @@ jobs:
 
       - uses: actions/checkout@v2
         with:
-          ref: gh-pages
+          ref: main
 
       - name: Submodule
         run: |
+          git branch
           git submodule init
           git submodule update
 
