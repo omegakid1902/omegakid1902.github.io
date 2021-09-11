@@ -60,7 +60,7 @@ jobs:
       - name: Scan md file to publish
         run: python publish.py
 
-      - uses: actions/checkout@v2
+#      - uses: actions/checkout@v2
 #      - name: Create report file
 #        run: date +%s > report.txt
       - name: Commit report
