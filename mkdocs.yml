@@ -18,13 +18,14 @@ nav:
 
 plugins:
   - search
+  - roamlinks
   - autolinks
   - git-revision-date-localized:
       type: timeago
   - minify:
       minify_html: true
   - section-index
-  - mkdocs-newsletter
+  - mkdocs-newsletter 
 
 markdown_extensions:
   - abbr
@@ -91,7 +92,3 @@ extra:
 
 repo_name: github.io
 repo_url: https://github.com/omegakid1902/omegakid1902.github.io
-
-plugins:
-  - search
-  - roamlinks 
