@@ -81,6 +81,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: check tag
         run: echo ${{ steps.checkTag.outputs.exists }}
 
       - name: Create tag
