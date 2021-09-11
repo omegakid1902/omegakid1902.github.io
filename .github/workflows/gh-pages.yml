@@ -20,6 +20,10 @@ jobs:
           # Default: 1
           fetch-depth: 0
 
+      - name: Commit files
+        run: |
+          git submodule init
+
       - name: Setup Python
         # https://github.com/actions/virtual-environments/issues/1202
         # uses: actions/setup-python@v1
