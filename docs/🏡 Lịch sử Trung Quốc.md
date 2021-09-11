@@ -48,15 +48,25 @@ publish: False
 - 
 ###
 [[Phục Hi]]
+
 [[Nữ Oa]]
+
 [[Thần Nông]]
+
 [[Đế Nghiêu]]
+
 [[Đế Thuấn]]
+
 [[Hạ Vũ]]
+
 [[Thành Thang]]
+
 [[Chu Vũ Vương]]
+
 [[Cơ Xương]]
+
 [[Khương Tử Nha]]
+
 [[Đế Tân]]
 [[Tần Thủy Hoàng]]
 [[Thương Ưởng]]
