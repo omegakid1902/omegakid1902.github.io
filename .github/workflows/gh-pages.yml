@@ -79,11 +79,11 @@ jobs:
           git push origin gh-page-build.#${{ github.run_number }}
           git push origin main
           
-#      - name: Push changes
-#        uses: ad-m/github-push-action@master
-#        with:
-#          github_token: ${{ secrets.GITHUB_TOKEN }}
-#          branch: main
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3.7.3
@@ -95,6 +95,6 @@ jobs:
           allow_empty_commit: true
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
-          commit_message: ${{ github.event.head_commit.message }}
-          tag_name: ${{ steps.prepare_tag.outputs.deploy_tag_name }}
-          tag_message: 'Deployment ${{ steps.prepare_tag.outputs.tag_name }}'
+          #commit_message: ${{ github.event.head_commit.message }}
+          #tag_name: ${{ steps.prepare_tag.outputs.deploy_tag_name }}
+          #tag_message: 'Deployment ${{ steps.prepare_tag.outputs.tag_name }}'
