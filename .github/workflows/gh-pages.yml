@@ -58,9 +58,7 @@ jobs:
 
       - name: Commit files
         run: |
-          git status
-          rm -rf zettelkasten
-          git status
+          git restore --stage zettelkasten
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add requirements.txt # git add docs/newsletter
