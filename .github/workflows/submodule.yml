@@ -19,6 +19,10 @@ jobs:
           # Default: 1
           fetch-depth: 0
 
+      - uses: actions/checkout@v2
+        with:
+          ref: master
+
       - name: Submodule
         run: |
           git submodule init
