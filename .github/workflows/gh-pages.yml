@@ -4,7 +4,8 @@ name: github pages
 on:
   push:
     branches:
-      - master
+      #- master
+      - blue-book
   schedule:
     - cron: 11 06 * * *
 
