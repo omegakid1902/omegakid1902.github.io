@@ -71,11 +71,9 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
 
-      - name: Output Run ID
-        run: |
-          echo ${{ github.run_number }}
-          git tag gh-pages-build.${{ github.run_number }}
-          git push origin gh-pages-build.${{ github.run_number }}
+      - uses: actions-ecosystem/action-push-tag@v1
+        with:
+          tag: gh-pages-build.${{ github.run_number }}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3.7.3
