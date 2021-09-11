@@ -4,7 +4,7 @@ name: github pages
 on:
   push:
     branches:
-      - master
+      - main
       - 'lyz-code/blue-book'
   schedule:
     - cron: 11 06 * * *
