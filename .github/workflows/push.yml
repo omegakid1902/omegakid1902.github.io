@@ -12,4 +12,5 @@ jobs:
           git config --global user.name 'Github Action'
           git config --global user.email 'github-action@@users.noreply.github.com'
           git commit -am "Automated report"
+          git add report.txt
           git push
