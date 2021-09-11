@@ -20,6 +20,11 @@ jobs:
           # Default: 1
           fetch-depth: 0
 
+      - uses: actions/checkout@v2
+        with:
+          ssh-key: ${{ secrets.SUBMODULE_CONTENT_PULL_KEY }}
+          submodules: 'recursive'
+
       - name: Setup Python
         # https://github.com/actions/virtual-environments/issues/1202
         # uses: actions/setup-python@v1
@@ -43,12 +48,6 @@ jobs:
         
       - name: Update requirements
         run: make update
-
-      - name: Commit files
-        run: |
-          git submodule init
-          git submodule update --init --recursive
-          cd zettelkasten
 
       - name: Scan md file to publish
         run: python publish.py
