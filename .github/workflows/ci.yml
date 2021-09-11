@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      - master
       #- lyz-code/blue-book
   schedule:
     - cron: 11 06 * * *
