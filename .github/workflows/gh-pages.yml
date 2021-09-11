@@ -56,9 +56,6 @@ jobs:
 
       - name: Scan md file to publish
         run: python publish.py
-        
-      - name: Make the site
-        run: make build-docs
 
       - uses: actions/checkout@v2
 #      - name: Create report file
@@ -78,7 +75,10 @@ jobs:
           git tag gh-page-build.#${{ github.run_number }}
           git push origin gh-page-build.#${{ github.run_number }}
           git push origin main
-          
+
+      - name: Make the site
+        run: make build-docs
+
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
