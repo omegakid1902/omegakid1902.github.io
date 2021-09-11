@@ -46,7 +46,11 @@ jobs:
 
       - name: Clone zettelkasten
         run: |
-          git clone https://github.com/omegakid1902/zettelkasten.git
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          #git clone https://github.com/omegakid1902/zettelkasten.git
+          git submodule init
+          git submodule update
           ls
           git status
 
@@ -69,6 +73,7 @@ jobs:
           git add requirements.txt # git add docs/newsletter
           git add docs/
           git add zettelkasten/
+          git add report.txt
           git diff-index --quiet HEAD \
             || git commit -m "gh-pages build number ${{ steps.prepare_tag.outputs.tag_name }}"
           #git tag gh-page-build.#${{ github.run_number }}
