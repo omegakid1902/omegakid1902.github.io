@@ -61,8 +61,8 @@ jobs:
         run: make build-docs
 
       - uses: actions/checkout@v2
-      - name: Create report file
-        run: date +%s > report.txt
+#      - name: Create report file
+#        run: date +%s > report.txt
       - name: Commit report
         run: |
           cd zettelkasten
@@ -73,13 +73,10 @@ jobs:
           git add requirements.txt # git add docs/newsletter
           git add docs/
           git add zettelkasten/
-          git add report.txt
           git diff-index --quiet HEAD \
-            || git commit -m "gh-pages build number ${{ steps.prepare_tag.outputs.tag_name }}"
-          #git tag gh-page-build.#${{ github.run_number }}
-          #git push origin gh-page-build.#${{ github.run_number }}
-          git tag gh-build.${{ steps.prepare_tag.outputs.deploy_tag_name }}
-          git push gh-build.${{ steps.prepare_tag.outputs.deploy_tag_name }}
+            || git commit -m "gh-pages build number #${{ github.run_number }}"
+          git tag gh-page-build.#${{ github.run_number }}
+          git push origin gh-page-build.#${{ github.run_number }}
           git push origin main
           
 #      - name: Push changes
