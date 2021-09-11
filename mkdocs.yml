@@ -85,3 +85,7 @@ extra:
 
 repo_name: github.io
 repo_url: https://github.com/omegakid1902/omegakid1902.github.io
+
+plugins:
+  - search
+  - roamlinks 
