@@ -1,10 +1,17 @@
 ---
-tags: '#MOC'
-alias:
+title: Interests
+UID: 210911134848
+created: 11-Sep-2021
+tags:
+  - '#created/2021/Sep/11'
+  - '#garden🏡'
+  - '#permanent/concept'
+aliases:
+  - Interests
+publish: True
 ---
 # Interests 
 
----
 ### Knowledge Management
 The [[PKM MOC]] shows the best practices of [[Knowledge Management]]. I use the [[LYT Kit]] to show the power of linked thinking and to empower others to develop their thinking. The [[MOC - Map Of Content|MOC]] is my personal note to wrap my head around the wondrous beauty that MOCs offer.
 
@@ -14,17 +21,17 @@ The [[Mindsets MOC]] can galvanize my attention; the [[Concepts MOC]] can flavor
 Others: [[Posture MOC]] and [[Hormesis MOC]] and [[Breathing Exercises MOC]]. [[Sách đã đọc]]
 
 ### Philosophy 🤔 & Psychology 🧠; Spirituality 🙏 & Religion ㊪
-[[002 Triết học|Triết học]] 
+[[Triết học|Triết học]] 
 [[Stoicism - Chủ nghĩa khắc kỷ]] 
 [[Religion]] 
-[[006 Psychology]]
+[[Psychology]]
 [[Self Improvement]]
 
 ### Social Sciences 👥
 Politics | Society | Law | Relationships | 
 
 ### Communications & Rhetoric; Language & Linguistics 🗣
-[[Rhetoric MOC]] | [[003 Language]] | [[Words MOC]] | [[Figure MOC]]
+[[Rhetoric MOC]] | [[Language]] | [[Words MOC]] | [[Figure MOC]]
 [[Commonplace MOC]] |
 
 
@@ -48,12 +55,12 @@ Film & TV | [[Movies MOC]] | Sports | [[Football MOC]] | Music
 `#source/movie🎬` | `#source/tv🎬` | `#source/music🎵`
 
 ### Literature
-[[005 Văn học]]
+[[Văn học]]
 
 ### History & Biography & Geography
 - The [[Art & Science Storytelling MOC]] look at some great storytellers of history. 
 - [[Ancient Greece MOC]], 
-- [[001 Lịch sử]]
+- [[Lịch sử]]
 - [[Places MOC]]
 
 ---
@@ -65,7 +72,7 @@ I wouldn't go overboard with numbering things. We’re just using a basic pre-ma
 
 #### The structure of this classification system
 - The Self
-	- 000 [[000 Home|Knowledge Management]]
+	- 000 [[Home|Knowledge Management]]
 	- 100 Personal Management
 	- 200 Philosophy & Psychology; Spirituality & Religion
 - Others
@@ -93,14 +100,14 @@ For those that want to maintain an alphabetical "Map of Maps" list, here's an in
 - [[Cooking MOC]]
 - [[Cosmology MOC]]
 - [[Football MOC]]
-- [[001 Lịch sử]]
+- [[Lịch sử]]
 - [[Home Building MOC]]
-- [[003 Language]]
+- [[Language]]
 	- [[Chinese Language MOC]]
 	- [[English Language MOC]]
 	- [[French Language MOC]]
 	- [[Latin Language MOC]]
-- [[005 Văn học]]
+- [[Văn học]]
 - [[Rhetoric MOC]]
 - [[Stoicism - Chủ nghĩa khắc kỷ]]
 - [[Vocals MOC]]

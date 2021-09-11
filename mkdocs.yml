@@ -4,10 +4,16 @@ site_description: My personal digital garden
 site_author: Dung Tran
 site_url: https://omegakid1902.github.io
 nav:
-  - Introduction: index.md
-  - Home: 000 Home.md
-  - Psychology:
-      - The XY Problem: psychology/the_xy_problem.md
+  - Introduction: 🏡 Enter the garden.md
+  - Home: 🏡 Enter the garden.md
+  - Lịch sử:
+      - Lịch sử Việt Nam: 
+          - Lịch Sử Việt Nam.md
+          - Âu Lạc: Âu Lạc.md
+      - Lịch sử Trung Quốc:
+          - Lịch Sử Việt Nam.md
+          - Nhà Thương: Nhà Thương.md
+          - Nhà Chu: Nhà Chu.md
   - Contact: contact.md
 
 plugins:
