@@ -72,9 +72,20 @@ jobs:
           git add zettelkasten/
           git diff-index --quiet HEAD \
             || git commit -m "gh-pages build number #${{ github.run_number }}"
+          git push origin main
+
+      - uses: mukunku/tag-exists-action@v1.0.0
+        id: checkTag
+        with: 
+          tag: 'gh-page-build.#${{ github.run_number }}'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create tag
+        if: ${{ steps.checkTag.outputs.exists }}
+        run: |
           git tag gh-page-build.#${{ github.run_number }}
           git push origin gh-page-build.#${{ github.run_number }}
-          git push origin main
 
       - name: Make the site
         run: make build-docs
