@@ -46,8 +46,11 @@ jobs:
 
       - name: Commit files
         run: |
+          pwd
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          git submodule init
+          cd zettelkasten
           git submodule update
 
       - name: Scan md file to publish
