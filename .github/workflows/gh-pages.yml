@@ -56,6 +56,23 @@ jobs:
       - name: Make the site
         run: make build-docs
 
+      - uses: actions/checkout@v2
+      - name: Create report file
+        run: date +%s > report.txt
+      - name: Commit report
+        run: |
+          cd zettelkasten
+          git reset --hard
+          cd ..
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add requirements.txt # git add docs/newsletter
+          git add docs/
+          git add zettelkasten/
+          git add report.txt
+          git commit -am "Automated report"
+          git push
+          
       - name: Commit files
         run: |
           cd zettelkasten
@@ -68,12 +85,14 @@ jobs:
           git add zettelkasten/
           git diff-index --quiet HEAD \
             || git commit -m "gh-pages build number #${{ github.run_number }}"
-
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
+          git tag gh-page-build.#${{ github.run_number }}
+          git push
+          
+#      - name: Push changes
+#        uses: ad-m/github-push-action@master
+#        with:
+#          github_token: ${{ secrets.GITHUB_TOKEN }}
+#          branch: main
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3.7.3
