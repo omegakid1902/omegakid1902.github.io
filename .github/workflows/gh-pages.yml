@@ -56,12 +56,18 @@ jobs:
           git diff-index --quiet HEAD \
             || git commit -m "chore: update dependency and publish newsletters"
 
+#      - name: Push changes
+#        uses: ad-m/github-push-action@main
+#        with:
+#          github_token: ${{ secrets.GITHUB_TOKEN }}
+#          branch: main
+
       - name: Push changes
-        uses: ad-m/github-push-action@main
+        uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
-
+          branch: ${{ github.ref }}
+        
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
