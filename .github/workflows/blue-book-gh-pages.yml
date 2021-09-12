@@ -4,7 +4,6 @@ name: github pages
 on:
   push:
     branches:
-      - main
       - 'lyz-code/blue-book'
   schedule:
     - cron: 11 06 * * *
@@ -48,13 +47,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          #git clone https://github.com/omegakid1902/zettelkasten.git
-          git submodule init
-          git submodule update
-          cd zettelkasten
-          git checkout origin/main
-          ls
-          cd ..
+          git clone https://github.com/omegakid1902/zettelkasten.git
 
       - uses: actions/checkout@v2
 #      - name: Create report file
@@ -75,7 +68,7 @@ jobs:
           git add zettelkasten/
           git diff-index --quiet HEAD \
             || git commit -m "gh-pages build number #${{ github.run_number }}"
-          git push origin main
+          git push origin lyz-code/blue-book
 
       - uses: mukunku/tag-exists-action@v1.0.0
         id: checkTag
@@ -100,7 +93,7 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
+          branch: lyz-code/blue-book
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3.7.3
@@ -108,7 +101,7 @@ jobs:
           #deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site
-          publish_branch: gh-pages
+          publish_branch: gh-pages-blue-book
           allow_empty_commit: true
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
