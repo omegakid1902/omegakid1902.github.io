@@ -24,7 +24,10 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git add report.txt
           git commit -m "Zetelkaste repo changed ${{ github.run_number }}"
-          git push origin lyz-code/blue-book
 
-
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
 
