@@ -1,12 +1,11 @@
 ---
-name: github pages
+name: Blue book (Mkdocs) github pages
 
 on:
   push:
     branches:
+      # Push event on branch lyz-code/blue-book
       - 'lyz-code/blue-book'
-  schedule:
-    - cron: 11 06 * * *
 
 jobs:
   deploy:
@@ -36,7 +35,6 @@ jobs:
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
           restore-keys: |
             ${{ runner.os }}-pip-
-
       - name: Install dependencies
         run: pip install pip-tools
         
@@ -48,7 +46,6 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git clone https://github.com/omegakid1902/zettelkasten.git
-
       - uses: actions/checkout@v2
 #      - name: Create report file
 #        run: date +%s > report.txt
@@ -69,7 +66,6 @@ jobs:
           git diff-index --quiet HEAD \
             || git commit -m "gh-pages build number #${{ github.run_number }}"
           git push origin lyz-code/blue-book
-
       - uses: mukunku/tag-exists-action@v1.0.0
         id: checkTag
         with: 
@@ -80,12 +76,6 @@ jobs:
       - name: check tag
         run: echo ${{ steps.checkTag.outputs.exists }}
 
-#      - name: Create tag
-#        if: ${{ steps.checkTag.outputs.exists == 'false' }}
-#        run: |
-#          git tag gh-page-build.#${{ github.run_number }}
-#          git push origin gh-page-build.#${{ github.run_number }}
-
       - name: Make the site
         run: make build-docs
 
@@ -93,7 +83,7 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: lyz-code/blue-book
+          branch: 'lyz-code/blue-book'
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3.7.3
