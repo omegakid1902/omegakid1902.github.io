@@ -49,8 +49,6 @@ jobs:
 
       - name: Clone zettelkasten
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
           git clone https://github.com/omegakid1902/zettelkasten.git
 
       - name: Scan md file to publish
@@ -58,10 +56,10 @@ jobs:
 
       - name: Commit report
         run: |
-          #git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          #git config --local user.name "github-actions[bot]"
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          #git config --local user.email "action@github.com"
+          #git config --local user.name "GitHub Action"
           git add requirements.txt # git add docs/newsletter
           git add docs/
           git add zettelkasten/
