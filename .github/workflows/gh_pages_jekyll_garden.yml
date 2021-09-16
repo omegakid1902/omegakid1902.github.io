@@ -6,7 +6,7 @@ on:
       - main
 
   repository_dispatch:
-    types: [publish_jekyll]
+    types: [publish_jekyll_garden]
 
 jobs:
   build-sh-pages:
