@@ -32,7 +32,7 @@ jobs:
           #git config --local user.email "action@github.com"
           #git config --local user.name "GitHub Action"
           git rm -rf .
-          cp ../blue-book-garden/ ./
+          cp -rf ../blue-book-garden/ ./
           git add .
           echo "$(date '+%Y-%m-%d %H:%M:%S')-build.${{ github.run_number }}: Zetelkaste repo changed" >> report.txt
           git add report.txt
