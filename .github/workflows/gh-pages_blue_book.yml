@@ -1,0 +1,43 @@
+name: Catch trigger from blue-book-garden repo
+
+on:
+  repository_dispatch:
+    types: [publish_bluebook]
+
+jobs:
+  build-sh-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false 
+          fetch-depth: 0 
+          ref: 'gh-pages-blue-book'
+
+      - name: Clone blue-book-garden
+        run: |
+          cd ..
+          git clone https://github.com/omegakid1902/blue-book-garden.git
+          git checkout gh-pages-blue-book
+
+      - name: Commit report
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          #git config --local user.email "action@github.com"
+          #git config --local user.name "GitHub Action"
+          git rm -rf .
+          cp ../blue-book-garden/ ./
+          git add .
+          echo "$(date '+%Y-%m-%d %H:%M:%S')-build.${{ github.run_number }}: Zetelkaste repo changed" >> report.txt
+          git add report.txt
+          git diff-index --quiet HEAD \
+            || git commit -m "gh-pages-blue-book build number #${{ github.run_number }}"
+          #git push origin lyz-code/blue-book
+
+      - name: Publish gh-pages-blue-book 
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: 'gh-pages-blue-book'
+
