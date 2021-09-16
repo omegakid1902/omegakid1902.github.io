@@ -6,7 +6,7 @@ on:
       - main
 
   repository_dispatch:
-    types: [publish_gatsby]
+    types: [publish_gatsby_garden]
 
 jobs:
   build-sh-pages:
