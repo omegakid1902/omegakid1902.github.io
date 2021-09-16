@@ -1,6 +1,10 @@
 name: Catch trigger from blue-book-garden repo
 
 on:
+  push:
+    branches:
+      - main
+
   repository_dispatch:
     types: [publish_bluebook]
 
@@ -18,6 +22,7 @@ jobs:
         run: |
           cd ..
           git clone https://github.com/omegakid1902/blue-book-garden.git
+          cd blue-book-garden
           git checkout gh-pages-blue-book
 
       - name: Commit report
