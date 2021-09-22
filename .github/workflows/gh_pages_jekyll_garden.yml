@@ -22,8 +22,14 @@ jobs:
         run: |
           cd ..
           git clone https://github.com/omegakid1902/jekyll-garden.git
-          cd jekyll-garden
-          git checkout gh-pages
+      
+      - name: Checkout tools repo
+        uses: actions/checkout@v2
+        with:
+          repository: omegakid1902/jekyll-garden
+          path: ../jekyll-garden
+          ref: 'gh-pages'
+
       - name: Commit report
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
