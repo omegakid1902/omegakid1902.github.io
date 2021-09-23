@@ -23,7 +23,7 @@ jobs:
           cd ..
           git clone https://github.com/omegakid1902/blue-book-garden.git
           cd blue-book-garden
-          git checkout gh-pages-blue-book
+          git checkout gh-pages
 
       - name: Commit report
         run: |
