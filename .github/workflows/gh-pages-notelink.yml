@@ -1,0 +1,44 @@
+name: Catch trigger from jekyll-garden repo
+
+on:
+  push:
+    branches:
+      - main
+
+  repository_dispatch:
+    types: [publish_notelink]
+
+jobs:
+  build-sh-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false 
+          fetch-depth: 0 
+          ref: 'gh-pages-notelink'
+
+      - name: Clone jekyll-garden
+        run: |
+          cd ..
+          git clone https://github.com/omegakid1902/note-link.git
+          cd note-link
+          git checkout gh-pages
+      - name: Commit report
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          #git config --local user.email "action@github.com"
+          #git config --local user.name "GitHub Action"
+          git rm -rf .
+          cp -rf ../note-link/* ./
+          git add .
+          echo "$(date '+%Y-%m-%d %H:%M:%S')-build.${{ github.run_number }}: Zetelkaste repo changed" >> build.log
+          git add build.log
+          git diff-index --quiet HEAD \
+            || git commit -m "gh-pages-notelink build number #${{ github.run_number }}"
+      - name: Publish gh-pages-jekyll-garden
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: 'gh-pages-notelink'
