@@ -32,15 +32,15 @@ jobs:
           #git config --local user.email "action@github.com"
           #git config --local user.name "GitHub Action"
           git rm -rf .
-          cp -rf ../blue-book-garden/* ./
+          cp -rf ../obsidian-mkdocs-from-scratch/* ./
           git add .
           echo "$(date '+%Y-%m-%d %H:%M:%S')-build.${{ github.run_number }}: Zetelkaste repo changed" >> report.txt
           git add report.txt
           git diff-index --quiet HEAD \
-            || git commit -m "gh-pages-blue-book build number #${{ github.run_number }}"
+            || git commit -m "gh-pages-obsidian-mkdocs build number #${{ github.run_number }}"
           #git push origin lyz-code/blue-book
 
-      - name: Publish gh-pages-blue-book 
+      - name: Publish gh-pages-obsidian-mkdocs
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
