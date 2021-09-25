@@ -16,9 +16,9 @@ jobs:
         with:
           persist-credentials: false 
           fetch-depth: 0 
-          ref: 'gh-pages-blue-book'
+          ref: 'gh-pages-obsidian-mkdocs'
 
-      - name: Clone blue-book-garden
+      - name: Clone obsidian-mkdocs
         run: |
           cd ..
           git clone https://github.com/omegakid1902/obsidian-mkdocs-from-scratch.git
