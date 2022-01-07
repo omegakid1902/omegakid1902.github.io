@@ -10,7 +10,7 @@ backcall==0.2.0
     #   ipython
 click==8.0.1
     # via mkdocs
-decorator==4.4.2
+decorator==5.1.1
     # via
     #   -r requirements.in
     #   ipython
