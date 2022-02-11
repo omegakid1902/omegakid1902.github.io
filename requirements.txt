@@ -92,7 +92,7 @@ pickleshare==0.7.5
     # via
     #   -r requirements.in
     #   ipython
-prompt-toolkit==3.0.8
+prompt-toolkit==3.0.28
     # via
     #   -r requirements.in
     #   ipython
