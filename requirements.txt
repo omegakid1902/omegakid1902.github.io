@@ -24,9 +24,7 @@ ipython==7.19.0
     #   -r requirements.in
     #   pyvis
 ipython-genutils==0.2.0
-    # via
-    #   -r requirements.in
-    #   traitlets
+    # via -r requirements.in
 jedi==0.17.2
     # via
     #   -r requirements.in
@@ -125,7 +123,7 @@ pyyaml-env-tag==0.1
     # via mkdocs
 six==1.16.0
     # via python-dateutil
-traitlets==5.0.5
+traitlets==5.2.2.post1
     # via
     #   -r requirements.in
     #   ipython
