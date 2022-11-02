@@ -14,7 +14,6 @@ decorator==4.4.2
     # via
     #   -r requirements.in
     #   ipython
-    #   networkx
 ghp-import==2.0.1
     # via mkdocs
 importlib-metadata==4.8.1
@@ -74,7 +73,7 @@ mkdocs-roamlinks-plugin==0.1.3
     # via -r requirements.in
 mkdocs-section-index==0.3.1
     # via -r requirements.in
-networkx==2.5
+networkx==2.8.8
     # via
     #   -r requirements.in
     #   pyvis
