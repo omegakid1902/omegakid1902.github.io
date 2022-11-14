@@ -113,7 +113,7 @@ python-dateutil==2.8.2
     # via ghp-import
 python-frontmatter==1.0.0
     # via -r requirements.in
-pyvis==0.1.8.2
+pyvis==0.3.1
     # via -r requirements.in
 pyyaml==6.0
     # via
