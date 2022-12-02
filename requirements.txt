@@ -37,7 +37,7 @@ jinja2==2.11.3
     #   mkdocs
     #   mkdocs-plugin-tags
     #   pyvis
-jsonpickle==1.4.2
+jsonpickle==3.0.0
     # via
     #   -r requirements.in
     #   pyvis
@@ -140,4 +140,6 @@ zipp==3.5.0
 
 # The following packages are considered to be unsafe in a requirements file:
 setuptools==58.0.4
-    # via ipython
+    # via
+    #   ipython
+    #   jsonpickle
