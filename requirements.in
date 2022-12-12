@@ -23,5 +23,5 @@ ptyprocess==0.6.0
 Pygments==2.7.4
 pyvis==0.1.8.2
 PyYAML==6.0
-traitlets==5.0.5
+traitlets==5.7.1
 wcwidth==0.2.5
